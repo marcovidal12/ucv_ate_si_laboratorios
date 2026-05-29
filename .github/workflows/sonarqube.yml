@@ -12,7 +12,7 @@ jobs:
     # LE DECIMOS A GITHUB QUE TRABAJE DENTRO DE LA CARPETA SESIÓN 8
     defaults:
       run:
-        working-directory: "Sesión 8"
+        working-directory: "Sesion8"
 
     steps:
       - name: Checkout del código
