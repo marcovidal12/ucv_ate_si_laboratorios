@@ -1,30 +1,30 @@
-[cite_start]name: SonarQube [cite: 97]
+name: SonarQube
 
-[cite_start]on: [cite: 98]
-  [cite_start]push: [cite: 99]
+on:
+  push:
     branches:
-      - develop  # Adaptado para tu rama de trabajo
+      - develop
 
-[cite_start]jobs: [cite: 101]
-  [cite_start]sonar: [cite: 102]
-    [cite_start]runs-on: ubuntu-latest [cite: 104]
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
 
-    [cite_start]steps: [cite: 105]
+    steps:
       - name: Checkout del código
-        [cite_start]uses: actions/checkout@v4 [cite: 106]
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        [cite_start]uses: actions/setup-python@v5 [cite: 108]
+        uses: actions/setup-python@v5
         with:
-          [cite_start]python-version: "3.11" [cite: 109]
+          python-version: "3.11"
 
       - name: Install Poetry
-        [cite_start]run: pip install poetry [cite: 111]
+        run: pip install poetry
 
       - name: Install dependencies
-        [cite_start]run: poetry install [cite: 113]
+        run: poetry install
 
       - name: SonarQube Scan
-        [cite_start]uses: SonarSource/sonarqube-scan-action@master [cite: 115]
+        uses: SonarSource/sonarqube-scan-action@master
         env:
-          [cite_start]SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} [cite: 116]
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
