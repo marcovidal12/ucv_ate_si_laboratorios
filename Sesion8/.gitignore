@@ -1,0 +1,12 @@
+# Temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entorno virtual de Poetry
+.venv/
+poetry.lock
+
+# Variables de entorno (Para proteger tu GOOGLE_API_KEY)
+.env
