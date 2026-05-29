@@ -9,9 +9,16 @@ jobs:
   sonar:
     runs-on: ubuntu-latest
 
+    # LE DECIMOS A GITHUB QUE TRABAJE DENTRO DE LA CARPETA SESIÓN 8
+    defaults:
+      run:
+        working-directory: "Sesión 8"
+
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: .  # Mantiene el checkout simple
 
       - name: Setup Python
         uses: actions/setup-python@v5
